@@ -1,0 +1,57 @@
+{% extends './layout.html' %}
+{% load humanize %}
+
+{% block content %}
+    {{ block.super }}
+    <a href="{% url 'shop:item_list' %}">상품 목록으로 돌아가기</a><br/><br/>
+    <form>
+    <fieldset>
+    <table>
+        <thead>
+            <th>필드</th><th>내용</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="15%">id:</td>
+            <td><input type="text" value={{ item.id }} style = "text-align:right;"></td>
+        </tr>
+        <tr>
+            <td>상품:</td>
+            <td><input type="text" value="{{ item.name }}"></td>
+        </tr>
+        <tr>
+            <td>설명:</td>
+            <td>
+                <textarea style="width: 400px; height: 200px; overflow: visible;">
+                    {{ item.desc }}
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>가격:</td>
+            <td><input type="text" value="{{ item.price|intcomma }}"
+                       style = "text-align:right;"> 원
+            </td>
+        </tr>
+        <tr>
+            <td>사진:</td>
+            <td>
+                {% if item.photo %}<img src="{{ item.photo.url }}"/>{% endif %}
+            </td>
+
+        </tr>
+        <tr>
+            <td>출시 여부:</td>
+            <td>
+                <input type="checkbox" name="is_published" value="1"
+                       {% if item.is_published %}checked{% endif %} />
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </fieldset>
+    </form>
+    <br>
+    <a href="{% url 'shop:item_edit' item.pk %}">수정</a>
+    <a href="{% url 'shop:item_remove' item.pk %}">삭제</a>
+{% endblock content %}

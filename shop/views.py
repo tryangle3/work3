@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from shop.models import Item
 from django.http import HttpResponse
-import requests
-from PIL import Image, ImageDraw, ImageFont
-import pandas as pd                           # 엑셀 요청 처리
-from io import BytesIO
-from urllib.parse import quote
-import re
+# import requests
+# from PIL import Image, ImageDraw, ImageFont
+# import pandas as pd                           # 엑셀 요청 처리
+# from io import BytesIO
+# from urllib.parse import quote
+# import re
 from django.shortcuts import redirect
 from .form import ItemForm  # b29)
 from django.views.generic import CreateView, UpdateView

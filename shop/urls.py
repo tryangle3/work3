@@ -14,9 +14,9 @@ urlpatterns = [
     path('edit/<int:pk>/', views.item_edit, name='item_edit'),  # 수정
     path('<int:pk>/', views.item_detail, name='item_detail'),
     path('new/', views.item_new, name='item_new'),
-    path('excel/', views.response_excel),
-    path('image/', views.response_image),
-    path('mysum/<int:x>/<int:y>/', views.my_sum),
-    path('archives/<yyyy:year>/', views.year_archive),
+    # path('excel/', views.response_excel),
+    # path('image/', views.response_image),
+    # path('mysum/<int:x>/<int:y>/', views.my_sum),
+    # path('archives/<yyyy:year>/', views.year_archive),
     path('test_templates/', views.test_templates),  # 추가
 ]

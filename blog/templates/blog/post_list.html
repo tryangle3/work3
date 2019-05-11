@@ -1,9 +1,9 @@
 {% extends './layout.html' %}
-{#{% load staticfiles %}#}
+
 
 <html lang="en">
 <head>
-{#    <link rel="stylesheet" href="{% static 'static/blog/blog.css' %}">#}
+
     <style>
         #tblBlog {
             background-color: #00bb00;
@@ -15,8 +15,6 @@
     </style>
 </head>
 <body>
-</body>
-</html>
 
 {% block content %}
     {{ block.super }}
@@ -46,3 +44,5 @@
         {% endfor %}
     </table><br/>
 {% endblock %}
+
+</body>

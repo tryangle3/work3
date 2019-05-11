@@ -7,7 +7,6 @@ def post_list(request):
     return render(request, 'blog/post_list.html',
                   {'post_list': qs})
 
-
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     all_tag = Tag.objects.all()

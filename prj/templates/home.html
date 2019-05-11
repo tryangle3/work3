@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 
+
 {% block content %}
     {{ block.super }}
 
@@ -67,6 +68,7 @@
     </div>
     <br>
 
+
     <!-- 블로그 -->
     <section class="bg-light">
         <div class="container">
@@ -75,7 +77,7 @@
 
                 <div class="row">
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/blog/4/' "><img src="/media/비행기.jpg" alt="dldldldl" class="card-img-top" height="235px"></a>
+                        <div class="card shadow border-0 h-100"><a href="{% url 'blog:post_detail' pk=4%}"><img src="/media/비행기.jpg" alt="dldldldl" class="card-img-top" height="235px"></a>
                             <div class="card-body">
                                 <h5> <a href="#" class="text-dark">9박 10일 유럽여행</a></h5>
                                 <p class="text-muted card-text">인천공항에 도착했어요! …</p>
@@ -85,7 +87,7 @@
                     </div>
 
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/blog/3/' "><img src="/media/몰디브.jpg" alt="" class="card-img-top"></a>
+                        <div class="card shadow border-0 h-100"><a href="{% url 'blog:post_detail' pk=3%}"><img src="/media/몰디브.jpg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <h5> <a href="#" class="text-dark">몰디브로 떠나요</a></h5>
                                 <p class="text-muted card-text">수상호텔에 머물기로 했어요 …</p>
@@ -95,7 +97,7 @@
                     </div>
 
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/blog/2/' "><img src="/media/시드니.jpg" alt="" class="card-img-top"></a>
+                        <div class="card shadow border-0 h-100"><a href="{% url 'blog:post_detail' pk=2%}"><img src="/media/시드니.jpg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <h5> <a href="#" class="text-dark">파란만장한 시드니 여행스토리</a></h5>
                                 <p class="text-muted card-text">이번 여행은 대학 친구들과 떠나기로 했어요~ …</p>
@@ -114,7 +116,7 @@
             <p class="lead text-muted mb-5">티키타카의 아이템</p>
                 <div class="row">
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/shop/2/' "><img src="/media/갤럭시폴드.jpg" alt="" class="card-img-top" height="350px"></a>
+                        <div class="card shadow border-0 h-100"><a href="{% url 'shop:item_detail' pk=2%}"><img src="/media/갤럭시폴드.jpg" alt="" class="card-img-top" height="350px"></a>
                             <div class="card-body">
                                 <h5> <a href="#" class="text-dark">갤럭시폴드</a></h5>
                                 <p class="text-muted card-text">갤럭시폴드가 나왔어요! … </p>
@@ -124,7 +126,7 @@
                     </div>
 
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/shop/6/'"><img src="/media/갤럭시_s10.jpg" alt="" class="card-img-top" height="350px"></a>
+                        <div class="card shadow border-0 h-100"><a href="{% url 'shop:item_detail' pk=6%}"><img src="/media/갤럭시_s10.jpg" alt="" class="card-img-top" height="350px"></a>
                             <div class="card-body">
                                 <h5> <a href="#" class="text-dark">갤럭시s10</a></h5>
                                 <p class="text-muted card-text">갤럭시s10이 나왔어요! …</p>
@@ -134,7 +136,7 @@
                     </div>
 
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/shop/3/'"><img src="/media/register_detail_076.jpg" alt="" class="card-img-top"></a>
+                        <div class="card shadow border-0 h-100"><a href="{% url 'shop:item_detail' pk=3%}"><img src="/media/register_detail_076.jpg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <h5> <a href="#" class="text-dark">앰프</a></h5>
                                 <p class="text-muted card-text">새로운 앰프에요! 한 번… </p>

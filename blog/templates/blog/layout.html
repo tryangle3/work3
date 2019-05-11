@@ -1,20 +1,12 @@
-{% extends '../layout.html' %} {# 프로젝트 수준 layout.html 템플릿을 상속받음 #}
-
+{% extends "base.html" %}
 {% load static %}
 
-{% block title %}
-    {{ block.super }} blog
-{% endblock %}
-
-{% block extra_head %}
-    {{ block.super }}
-    <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
-{% endblock %}
 
 {% block content %}
     {{ block.super }}
-    <img src="{% static 'blog/casual_shin.png' %}" alt="blog logo image">
-    <h2>blog in logistex site </h2>
+    <div class="py-5 bg-gray" style="margin-left: 20px;">
+        <span style="font-size: 15px;"><b>BLOG 상속 영역입니다.</b></span>
+    </div>
 {% endblock %}
 
 {% block extra_body %}

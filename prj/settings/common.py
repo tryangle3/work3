@@ -153,3 +153,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'  # 항상 '/'로 끝나야 함
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 INTERNAL_IPS = ['127.0.0.1']                            # 추가 3
+
+LOGIN_REDIRECT_URL = '/'

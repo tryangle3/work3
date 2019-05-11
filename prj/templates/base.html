@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap 101: Learn Bootstrap in 60 minutes by Bootstrapious.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <!-- Carousel CSS 얘 없애면 다 제대로 되는데 없으면 캐러셀이 안됨;;;-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+    <!-- Carousel-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    {% load staticfiles %}
+    <style>
+        body {
+            font-family: "malgun";
+        }
+        #header{
+            position: absolute;
+            padding: 20px;
+            margin: 0px;
+        }
+        #header a {
+            color: #000;
+        }
+
+        #nav ul li{
+            display: inline;
+        }
+        #nav ul li a{
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 20px;
+        }
+        #footer p{
+            color: #ffffff;
+            font-size: 20px;
+            text-align: center;
+        }
+        div#menu {
+            position: absolute;
+            top: 60px;
+            height: 20px;
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+            font-size: 18px;
+            margin-top: 3%;
+            padding: 10px;
+        }
+        div#menu a:link, div#menu a:visited {
+          color: #6b6b6b;
+        }
+
+        div#menu > li {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          font-weight: bold;
+        }
+    </style>
+</head>
+
+
+<body>
+    {% block header %}
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top shadow-sm bg-light" id="header">
+            <!--로고-->
+            <a href="{% url 'home' %}" class="navbar-brand">
+              <img src="/media/triangle2.png" style="max-width: 100%; max-height: 100%; display: inline;"><b style=" font-size: 30px;">T-kitaka</b>
+            </a>
+            <button type="button"
+                  data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation" class="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--로그인-->
+            <div>
+                <div>
+                    {% if user.is_active %}
+                        <div>
+                            <h4 style="margin-left: 59%; margin-top: 0px; position: absolute; display: inline">안녕하세요 <b>{% firstof user.get_short_name user.get_username %}님</b></h4>
+                            <a href="{% url 'logout' %}" class="btn btn-primary text-white shadow" style="margin-left: 75%; margin-top: 0px; position: absolute; display: inline">로그아웃</a>
+
+                        </div>
+                    {% else %}
+                        <div>
+                            <h4 style="margin-left: 67%; margin-top: 0px; position: absolute; display: inline"><b>로그인 해주세요</b></h4>
+                            <a href="{% url 'login' %}" class="btn btn-primary text-white shadow" style="margin-left: 75%; margin-top: 0px; position: absolute; display: inline">로그인</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </nav>
+    {% endblock %}
+
+    {% block nav %}
+        <div id="menu">
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'blog:post_list' %}">BLOG</a></li>
+            <li><a href="{% url 'shop:item_list' %} ">SHOP</a></li>
+            <li><a href="{% url 'admin:index' %}">ADMIN</a></li>
+        </div>
+    {% endblock %}
+
+    {% block content %}
+        <div class="py-5 bg-gray" style="margin-top: 10%; margin-left: 20px;">
+            <span style="font-size: 15px;"><b>BASE 상속 영역입니다.</b></span>
+        </div>
+
+    {% endblock %}
+
+    {% block footer %}
+        <div class="py-5 bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h5 class="text-light">T-kitaka</h5>
+                        <ul class="contact-info list-unstyled">
+                            <li><a href="mailto:sales@landy.com" class="text-light">tkitaka@hywoman.ac.kr</a></li>
+                            <li><a href="tel:123456789" class="text-light">+82 9 1234 5678</a></li>
+                        </ul>
+                        <p class="text-light">스마트IT과 팀 트라이앵글</p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="text-light">BLOG</h5>
+                        <ul class="links list-unstyled">
+                            <li> <a href="#" class="text-muted">Blog List</a></li>
+                            <li> <a href="#" class="text-muted">Best Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="text-light">SHOP</h5>
+                        <ul class="links list-unstyled">
+                            <li> <a href="#" class="text-muted">Shop List</a></li>
+                            <li> <a href="#" class="text-muted">Best Item</a></li>
+                            <li> <a href="#" class="text-muted">New Item</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-3 bg-dark text-white my-color">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 text-center text-md-left">
+                        <p class="mb-md-0">2019 sydowhatyoudream Web. All rights reserved. </p>
+                    </div>
+
+                    <div class="col-md-5 text-center text-md-right">
+                        <p class="mb-0">Template By <a href="https://bootstrapious.com/" class="external text-white">Bootstrapious</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

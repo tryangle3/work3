@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}로그인{% endblock %}
+{% load staticfiles %}
+
+{% block content %}
+<div style="margin: 200px; padding:0px;">
+    <h3 style="text-align: center">로그인</h3>
+    <form action="" method="post">{% csrf_token %}
+    {% if form.errors %}
+        <p style="text-align: center; color: #ff3f4c">아이디 혹은 비밀번호가 틀렸습니다.</p>
+    {% endif %}
+
+    <fieldset style="width: 30%; margin-left: 34%;">
+        <table >
+            <tr>
+                <td style="text-align: right; width: 30%;">{{ form.username.label_tag }}&nbsp;</td>
+                <td style="width: 50%; text-align: center;">{{ form.username }}</td>
+                <td rowspan="2" style="width: 5%;">
+                    <input type="submit" value="로그인" style="height: 40px; width:70px; margin-top: 15%; margin-right: 30px; text-align: center;">
+                    <input type="hidden" name="next" value="{{ next }}"><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">{{ form.password.label_tag }}&nbsp;</td>
+                <td style="text-align: center">{{ form.password }}</td>
+            </tr>
+        </table>
+    </fieldset><br>
+
+    <script type="text/javascript">document.getElementById('id_username').focus();</script>
+    </form>
+</div>
+{% endblock %}

@@ -2,10 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings                         # 추가 1
 from django.conf.urls.static import static
+from prj.views import HomeView
+
 
 urlpatterns = [
-    # path('', IndexView.as_view(), name='home'),
-    # path('', include('shop.urls')),
+    path('', HomeView.as_view(), name='home'),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),
     path('blog/', include('blog.urls')),

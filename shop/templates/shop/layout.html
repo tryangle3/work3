@@ -1,21 +1,17 @@
-<!-- shop/templates/shop/layout.html -->
-{% extends '../layout.html' %}
+{% extends "base.html" %}
 
 {% load static %}
 
-{% block title %}
-    {{ block.super }} shop
-{% endblock %}
-
-{% block extra_head %}
+{% block header %}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'shop/shop.css' %}" />
+    <img src="prj/static/triangle2.png" style="max-width: 100%; max-height: 100%; display: inline;">
 {% endblock %}
 
 {% block content %}
     {{ block.super }}
-    <img src="{% static 'shop/triangle.png' %}" alt="shop logo image">
-    <h2>shop in sydowhatyoudream site </h2>
+    <div class="py-5 bg-gray" style="margin-left: 20px;">
+        <span style="font-size: 15px;"><b>SHOP 상속 영역입니다.</b></span>
+    </div>
 {% endblock %}
 
 {% block extra_body %}

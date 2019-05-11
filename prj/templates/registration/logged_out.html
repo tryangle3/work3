@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}로그아웃{% endblock %}
+
+{% block content %}
+<div id="content" style="margin: 200px;">
+    <p style="text-align: center; font-size: 20px">로그아웃 되었습니다</p>
+    <p style="text-align: center"><a href="{% url 'login' %}" class="btn btn-primary text-white shadow">로그인</a>
+</p>
+</div>
+{% endblock %}

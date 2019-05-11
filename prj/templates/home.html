@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+    {{ block.super }}
+
+    <div class="py-5 bg-gray" style="margin-left: 20px;">
+        <span style="font-size: 15px;"><b>HOME 상속 영역입니다.</b></span>
+    </div>
+
+    <!-- 히어로 -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2">
+                <img src="static/macbook.png" alt="..." class="img-fluid">
+                </div>
+                <div class="col-lg-6 order-2 order-lg-1">
+                <h1>티키타카 소개</h1>
+                <p class="lead">티키타카는 취향 맞춤 여행 동행찾기 어플리케이션입니다. 여러분의 여행 동행을 찾아보세요! </p>
+                <p>
+                    <a href="#" class="btn btn-primary shadow mr-2">자세히 알아보기</a>
+                    <a href="#" class="btn btn-outline-primary">또 다른 조치</a>
+                </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <!-- 캐러셀 -->
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators" style="margin-left: 20%;">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="static/mockup0.jpg" alt="Los Angeles" style="width:100%; height:60%;">
+                </div>
+
+                <div class="item">
+                    <img src="static/mockup1.jpg" alt="Chicago" style="width:100%; height:60%;">
+                </div>
+
+                <div class="item">
+                    <img src="static/mockup2.jpg" alt="New york" style="width:100%; height:60%;">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <br>
+
+    <!-- 블로그 -->
+    <section class="bg-light">
+        <div class="container">
+            <h2>Blog</h2>
+            <p class="lead text-muted mb-5">티키타카 최신글</p>
+
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/blog/4/' "><img src="/media/비행기.jpg" alt="dldldldl" class="card-img-top" height="235px"></a>
+                            <div class="card-body">
+                                <h5> <a href="#" class="text-dark">9박 10일 유럽여행</a></h5>
+                                <p class="text-muted card-text">인천공항에 도착했어요! …</p>
+                                <p class="card-text"><a href="#">더 읽기</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/blog/3/' "><img src="/media/몰디브.jpg" alt="" class="card-img-top"></a>
+                            <div class="card-body">
+                                <h5> <a href="#" class="text-dark">몰디브로 떠나요</a></h5>
+                                <p class="text-muted card-text">수상호텔에 머물기로 했어요 …</p>
+                                <p class="card-text"><a href="#">더 읽기</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/blog/2/' "><img src="/media/시드니.jpg" alt="" class="card-img-top"></a>
+                            <div class="card-body">
+                                <h5> <a href="#" class="text-dark">파란만장한 시드니 여행스토리</a></h5>
+                                <p class="text-muted card-text">이번 여행은 대학 친구들과 떠나기로 했어요~ …</p>
+                                <p class="card-text"><a href="#">더 읽기</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- 샵 -->
+    <section class="bg-light">
+        <div class="container">
+            <h2>Shop</h2>
+            <p class="lead text-muted mb-5">티키타카의 아이템</p>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/shop/2/' "><img src="/media/갤럭시폴드.jpg" alt="" class="card-img-top" height="350px"></a>
+                            <div class="card-body">
+                                <h5> <a href="#" class="text-dark">갤럭시폴드</a></h5>
+                                <p class="text-muted card-text">갤럭시폴드가 나왔어요! … </p>
+                                <p class="card-text"><a href="#">더 보기</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/shop/6/'"><img src="/media/갤럭시_s10.jpg" alt="" class="card-img-top" height="350px"></a>
+                            <div class="card-body">
+                                <h5> <a href="#" class="text-dark">갤럭시s10</a></h5>
+                                <p class="text-muted card-text">갤럭시s10이 나왔어요! …</p>
+                                <p class="card-text"><a href="#">더 보기</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow border-0 h-100"><a href="#" onclick="location.href='http://127.0.0.1:8000/shop/3/'"><img src="/media/register_detail_076.jpg" alt="" class="card-img-top"></a>
+                            <div class="card-body">
+                                <h5> <a href="#" class="text-dark">앰프</a></h5>
+                                <p class="text-muted card-text">새로운 앰프에요! 한 번… </p>
+                                <p class="card-text"><a href="#">더 보기</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+<!-- JavaScript files-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>

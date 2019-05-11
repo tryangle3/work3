@@ -7,7 +7,7 @@ from prj.views import HomeView
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls'), {'template_name': 'prj/login.html'}),
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),
     path('blog/', include('blog.urls')),
